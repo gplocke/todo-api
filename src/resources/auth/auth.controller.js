@@ -22,7 +22,7 @@ function signup(req, res) {
         
         if (err) {
             return res.status(500).send({
-                message: "There was a problem registering the user."
+                message: "There was a problem registering the user. " + err
             });
         }
 
