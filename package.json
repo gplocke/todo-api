@@ -8,7 +8,7 @@
   "main": "src/server.js",
   "scripts": {
     "start": "NODE_ENV=development node src/server.js",
-    "test": "NODE_ENV=development jest --config=jest.config.json"
+    "test": "NODE_ENV=test mocha $(find src -name '*.test.js') --recursive --timeout 5000 --exit"
   },
   "author": "",
   "license": "ISC",
@@ -20,7 +20,8 @@
     "bcrypt": "^3.0.1"
   },
   "devDependencies": {
-    "jest": "^20.0.0",
-    "jest-junit": "^1.5.1"
+    "chai": "^4.2.0",
+    "chai-http": "^4.2.0",
+    "mocha": "^5.2.0"
   }
 }

@@ -60,12 +60,19 @@ function details(req, res) {
  */
 function create(req, res) {
 
+    if (!req.body.text) {
+        return res.status(400).send({
+            message: "A 'text' parameter is required to create a new todo."
+        });
+    }
+
     Todo.create({
         text : req.body.text,
+        complete : req.body.complete,
         user: {
             _id: req.userId
         }
-    }, 
+    },
     function (err, todo) {
         
         if (err) {
@@ -76,7 +83,7 @@ function create(req, res) {
 
         todo.populate('user', {password: false}, function(err, todo) { 
 
-            res.status(200).send({
+            res.status(201).send({
                 message: "Todo was successfully created.",
                 response: todo
             });
@@ -91,6 +98,12 @@ function create(req, res) {
  * @param {Response} res 
  */
 function replace(req, res) {
+
+    if (!req.body.text) {
+        return res.status(400).send({
+            message: "A 'text' parameter is required."
+        });
+    }
 
     Todo.findOneAndUpdate({_id: req.params.id, user: { _id: req.userId}}, req.body, {new: true}, function (err, todo) {
         

@@ -26,3 +26,6 @@ try {
     console.log(err);
     process.exit(1);
 }
+
+// Expose app
+module.exports = app;

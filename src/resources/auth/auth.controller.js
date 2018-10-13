@@ -31,10 +31,11 @@ function signup(req, res) {
             expiresIn: 86400
         });
 
-        res.status(200).send({
+        res.status(201).send({
             message: "User was successfully registered.",
             response: {
-                token: token
+                token: token,
+                user: user
             },
         });
     });
