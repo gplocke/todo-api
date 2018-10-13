@@ -1,0 +1,26 @@
+{
+  "name": "todo",
+  "version": "1.0.0",
+  "description": "",
+  "engines": {
+    "node": ">=9.0.0"
+  },
+  "main": "src/server.js",
+  "scripts": {
+    "start": "NODE_ENV=development node src/server.js",
+    "test": "NODE_ENV=development jest --config=jest.config.json"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "mongoose": "^5.3",
+    "jsonwebtoken": "^8.3.0",
+    "bcrypt": "^3.0.1"
+  },
+  "devDependencies": {
+    "jest": "^20.0.0",
+    "jest-junit": "^1.5.1"
+  }
+}

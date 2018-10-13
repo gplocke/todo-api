@@ -1,0 +1,10 @@
+{
+  "collectCoverage": true,
+  "coverageDirectory": "./build/",
+  "testEnvironment": "node",
+  "testResultsProcessor": "./node_modules/jest-junit",
+  "testPathIgnorePatterns": [
+    "/node_modules/",
+    "/src/config/environment/test.js"
+  ]
+}
