@@ -1,4 +1,4 @@
-This is a simple REST API that manages a list of Todo objects in a Mongodb collection.  It also provides user management functionality in order to associate todos with users.  Users are created by the `/auth/signup` endpoint.
+This is a simple REST API that manages a list of Todo objects in a Mongodb collection.  It also provides user management functionality in order to associate todos with users.  Users are created by the `/auth/signup` endpoint and then each todo that is created is associated with that user, so they only have access to their own todos.
 
 Requirements
 -
